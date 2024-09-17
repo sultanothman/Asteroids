@@ -2,6 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import pygame
+import sys
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from player import Player
 from asteroid import Asteroid
@@ -37,6 +38,10 @@ def main():
         
         for object in updatable:
             object.update(dt);
+        
+        for asteroid in asteroids:
+            if asteroid.DetectCollision(local_player):
+                sys.exit("Game over!")
         
         pygame.display.flip()
         time_passed = clock.tick(60)
