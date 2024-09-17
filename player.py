@@ -23,6 +23,7 @@ class Player(circleshape.CircleShape):
             self.triangle(),
             PLAYER_DRAW_LINE_WIDTH
             )
+        
     def update(self, dt):
         keys = pygame.key.get_pressed()
         
